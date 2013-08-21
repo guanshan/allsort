@@ -23,18 +23,18 @@ int main()
 	iTest.mergeSort(a,6);
 	cout << "int 数组，归并排序结果：" << flush;
 	iTest.printArray(a,6);
-	cout << "============================" << endl;*/
+	cout << "============================" << endl;
 	iTest.quickSort(a,6);
 	cout << "int 数组，快速排序结果：" << flush;
 	iTest.printArray(a,6);
-	cout << "============================" << endl;
+	cout << "============================" << endl;*/
 	iTest.heapSort(a,6);
 	cout << "int 数组，堆排序结果：" << flush;
 	iTest.printArray(a,6);
 	cout << "============================" << endl;
 
 	//在char上测试
-	char b[]={'3','2','6','7','1','9'};
+/*	char b[]={'3','2','6','7','1','9'};
 	allSort<char> cTest;
 	cTest.insertSort(b,6);
 	cout << "char数组，插入排序结果：" << flush;
@@ -55,6 +55,6 @@ int main()
 	cTest.quickSort(b,6);
 	cout << "char数组，快速排序结果：" << flush;
 	cTest.printArray(b,6);
-	cout << "============================" << endl;
+	cout << "============================" << endl;*/
 	return 0;
 }
