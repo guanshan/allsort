@@ -15,6 +15,8 @@ template <class T> void allSort<T>::insertSort(T a[],int n)
 				a[j+1]=a[j];
 				a[j]=flag;
 			}
+			else
+				break;
 		}
 	}
 }
@@ -30,16 +32,28 @@ template <class T> void allSort<T>::shellSort(T a[],int n)
 
 template <class T> void allSort<T>::shellInsert(T a[],int inc,int n)
 {
+	int j;
+	T flag;
 	for(int i=inc;i<n;i++)
 	{
-		int j = i;
-		T flag = a[i];
+		flag = a[i];
+		for(j=i-inc;j>=0;j-=inc)
+		{
+			if(flag<a[j])
+			{
+				a[j+inc]=a[j];
+				a[j]=flag;
+			}
+			else
+				break;
+		}
+	/*	j = i;//风格与之前插入排序保持一致,所以用上面的代码
 		while(j>=0 && a[j-inc]>flag)
 		{
 			a[j]=a[j-inc];
 			j-=inc;
 		}
-		a[j]=flag;
+		a[j]=flag;*/
 	}
 }
 
@@ -47,7 +61,8 @@ template <class T> void allSort<T>::selectSort(T a[],int n)
 {
 	int min = -1;
 	T temp;
-	for(int i=0;i<n;++i)
+	//i=n-1的时候已经不需要比了，所以是i<n-1
+	for(int i=0;i<n-1;++i)
 	{
 		min=i;
 		for(int j=i+1;j<n;++j)
@@ -72,6 +87,7 @@ template <class T> void allSort<T>::bubbleSort(T a[],int n)
 	int j = 0;
 	bool change=true;
 	T temp;
+	//大的数字往下沉
 	for (i=n-1;i>0&&change;--i)
 	{
 		change=false;
