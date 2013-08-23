@@ -19,6 +19,30 @@ template <class T> void allSort<T>::insertSort(T a[],int n)
 	}
 }
 
+template <class T> void allSort<T>::shellSort(T a[],int n)
+{
+	int inc = n/2;
+	for(;inc>0;inc/=2)
+	{
+		shellInsert(a,inc,n);
+	}
+}
+
+template <class T> void allSort<T>::shellInsert(T a[],int inc,int n)
+{
+	for(int i=inc;i<n;i++)
+	{
+		int j = i;
+		T flag = a[i];
+		while(j>=0 && a[j-inc]>flag)
+		{
+			a[j]=a[j-inc];
+			j-=inc;
+		}
+		a[j]=flag;
+	}
+}
+
 template <class T> void allSort<T>::selectSort(T a[],int n)
 {
 	int min = -1;

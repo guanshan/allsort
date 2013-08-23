@@ -1,3 +1,16 @@
+/*
+ * =============================================================================
+ *  Version: 0.1 (August 23, 2013)
+ *  Author: Shanshan Guan (vipgss@gmail.com), Harbin Institute of Technology Shenzhen Graduate School
+ *
+ * =============================================================================
+ *  Copyright (c) 2013. Shanshan Guan (vipgss@gmail.com).
+ * =============================================================================
+ *  Introduction.
+ * 已经实现常见的七种排序算法，包括：插入排序、希尔排序、选择排序、冒泡排序、归并排序、快速排序、堆排序
+ * 还有基数排序没有实现
+ * =============================================================================*/
+
 #ifndef ALLSORT_H_H_H___
 #define ALLSORT_H_H_H___
 #include <iostream>
@@ -10,6 +23,9 @@ class allSort
 public:
 	//插入排序
 	void insertSort(T a[],int n);//n is the size of array;
+	//希尔排序
+	void shellSort(T a[],int n);
+	void shellInsert(T a[],int inc,int n);
 	//选择排序
 	void selectSort(T a[],int n);
 	//冒泡排序
