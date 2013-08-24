@@ -4,6 +4,8 @@ using namespace std;
 
 template <class T> void allSort<T>::insertSort(T a[],int n)
 {
+	if (a==NULL)
+		return ;
 	T flag;//哨兵
 	for(int i=1;i<n;++i)
 	{
