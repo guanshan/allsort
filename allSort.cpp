@@ -4,6 +4,11 @@ using namespace std;
 
 template <class T> void allSort<T>::insertSort(T a[],int n)
 {
+	if (a==NULL || n<=0)
+	{
+		cout << "输入参数有问题！" << endl;
+		return ;
+	}
 	T flag;//哨兵
 	for(int i=1;i<n;++i)
 	{
@@ -23,6 +28,11 @@ template <class T> void allSort<T>::insertSort(T a[],int n)
 
 template <class T> void allSort<T>::shellSort(T a[],int n)
 {
+	if (a==NULL || n<=0)
+	{
+		cout << "输入参数有问题！" << endl;
+		return ;
+	}
 	int inc = n/2;
 	for(;inc>0;inc/=2)
 	{
@@ -59,6 +69,11 @@ template <class T> void allSort<T>::shellInsert(T a[],int inc,int n)
 
 template <class T> void allSort<T>::selectSort(T a[],int n)
 {
+	if (a==NULL || n<=0)
+	{
+		cout << "输入参数有问题！" << endl;
+		return ;
+	}
 	int min = -1;
 	T temp;
 	//i=n-1的时候已经不需要比了，所以是i<n-1
@@ -83,6 +98,11 @@ template <class T> void allSort<T>::selectSort(T a[],int n)
 
 template <class T> void allSort<T>::bubbleSort(T a[],int n)
 {
+	if (a==NULL || n<=0)
+	{
+		cout << "输入参数有问题！" << endl;
+		return ;
+	}
 	int i = 0;
 	int j = 0;
 	bool change=true;
@@ -106,6 +126,11 @@ template <class T> void allSort<T>::bubbleSort(T a[],int n)
 
 template <class T> void allSort<T>::mergeSort(T a[],int n)
 {
+	if (a==NULL || n<=0)
+	{
+		cout << "输入参数有问题！" << endl;
+		return ;
+	}
 	int first = 0;
 	int last = n-1;
 	T * temp = new T[n];
@@ -153,6 +178,11 @@ template <class T> void allSort<T>::mergeArray(T a[],int first,int mid,int last,
 
 template <class T> void allSort<T>::quickSort(T a[],int n)
 {
+	if (a==NULL || n<=0)
+	{
+		cout << "输入参数有问题！" << endl;
+		return ;
+	}
 	QuickSort(a,0,n-1);
 }
 
@@ -163,13 +193,16 @@ template <class T> void allSort<T>::QuickSort(T a[],int low,int high)
 	int key = a[low];
 	while(low<high)
 	{
-		while(low<high && a[high]>key)
+		while(low<high && a[high]>=key)
 			--high;
 		a[low] = a[high];
-		while(low<high && a[low]<key)
+		while(low<high && a[low]<=key)
 			++low;
 		a[high] = a[low];
-		a[low] = key;
+	}
+	a[low] = key;
+	if(low<high)
+	{
 		QuickSort(a,i,low-1);
 		QuickSort(a,low+1,j);
 	}
@@ -177,6 +210,11 @@ template <class T> void allSort<T>::QuickSort(T a[],int low,int high)
 
 template <class T> void allSort<T>::heapSort(T a[],int n)
 {
+	if (a==NULL || n<=0)
+	{
+		cout << "输入参数有问题！" << endl;
+		return ;
+	}
 	int size;
 //	createMinHeap(a,n);
 	createMaxHeap(a,n);
