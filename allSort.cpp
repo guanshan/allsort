@@ -10,19 +10,20 @@ template <class T> void allSort<T>::insertSort(T a[],int n)
 		return ;
 	}
 	T flag;//哨兵
+	int j = 0;
 	for(int i=1;i<n;++i)
 	{
 		flag = a[i];
-		for(int j=i-1;j>=0;j--)
+		for(j=i-1;j>=0;j--)
 		{
 			if(flag<a[j])
 			{
 				a[j+1]=a[j];
-				a[j]=flag;
 			}
 			else
 				break;
 		}
+		a[j+1]=flag;
 	}
 }
 
@@ -52,18 +53,20 @@ template <class T> void allSort<T>::shellInsert(T a[],int inc,int n)
 			if(flag<a[j])
 			{
 				a[j+inc]=a[j];
-				a[j]=flag;
 			}
 			else
+			{
 				break;
+			}
 		}
+		a[j+inc]=flag;
 	/*	j = i;//风格与之前插入排序保持一致,所以用上面的代码
 		while(j>=0 && a[j-inc]>flag)
 		{
 			a[j]=a[j-inc];
 			j-=inc;
 		}
-		a[j]=flag;*/
+		a[j]=flag;//是不是有可能j<0啊，这段代码有问题*/
 	}
 }
 

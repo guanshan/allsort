@@ -8,11 +8,11 @@ int main()
 	//在int上测试
 	int a[]={3,2,6,7,1,9};
 	allSort<int> iTest;
-/*	iTest.insertSort(a,6);
+	iTest.insertSort(a,6);
 	cout << "int 数组，插入排序结果：" << flush;
 	iTest.printArray(a,6);
 	cout << "============================" << endl;
-	iTest.selectSort(a,6);
+/*	iTest.selectSort(a,6);
 	cout << "int 数组，选择排序结果：" << flush;
 	iTest.printArray(a,6);
 	cout << "============================" << endl;
