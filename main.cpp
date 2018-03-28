@@ -1,5 +1,4 @@
 #include "allSort.h"
-#include "allSort.cpp"
 
 using namespace std;
 
